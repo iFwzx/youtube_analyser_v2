@@ -68,6 +68,9 @@ if video_url:
             df = pd.DataFrame(comments_data)
             st.subheader("Comments Preview")
             st.dataframe(df.head(10))
+            csv = df.to_csv(index=False).encode('utf-8')
+            st.download_button("📥 Download Comments CSV", data=csv, file_name="youtube_comments.csv", mime="text/csv")
+
 
             question = st.text_area(
                 "What would you like to know about the comments?",
@@ -105,5 +108,6 @@ Question:
             st.warning("No comments found for this video.")
     else:
         st.error("Invalid YouTube URL.")
+
 
 
