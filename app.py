@@ -46,7 +46,15 @@ def get_comments(video_id, max_results=1000):
     return comments
 
 st.set_page_config(page_title="YouTube Comments Analyzer", page_icon="🎬", layout="wide")
-st.title("YouTube Comments AI Analyzer")
+
+st.markdown("""
+<style>
+    .big-font {font-size:24px !important; font-weight:bold; color:#FF4B4B;}
+    footer {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<p class="big-font">🎬 YouTube Comments AI Analyzer</p>', unsafe_allow_html=True)
 st.write("Enter a YouTube video URL to fetch comments and analyze them.")
 
 video_url = st.text_input("YouTube Video URL")
@@ -97,4 +105,5 @@ Question:
             st.warning("No comments found for this video.")
     else:
         st.error("Invalid YouTube URL.")
+
 
