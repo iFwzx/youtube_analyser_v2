@@ -104,10 +104,15 @@ Question:
 
                 st.subheader("AI Analysis Result")
                 st.write(result)
+                st.success("✅ Analysis complete! Scroll down to see insights.")
+                st.markdown("---")
+                st.markdown("Made for fun by **Fawaz**")
+
         else:
             st.warning("No comments found for this video.")
     else:
         st.error("Invalid YouTube URL.")
+
 
 
 
