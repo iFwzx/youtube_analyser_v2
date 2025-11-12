@@ -109,13 +109,6 @@ Question:
     else:
         st.error("Invalid YouTube URL.")
 
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-
-st.subheader("☁️ Most Common Words in Comments")
-text = " ".join(df["comment"].dropna())
-wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-st.image(wordcloud.to_array())
 
 
 
