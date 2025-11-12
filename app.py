@@ -50,7 +50,7 @@ st.title("YouTube Comments AI Analyzer")
 st.write("Enter a YouTube video URL to fetch comments and analyze them.")
 
 video_url = st.text_input("YouTube Video URL")
-max_comments = st.number_input("Max comments per request", min_value=10, max_value=1000, value=100, step=10)
+max_comments = st.number_input("Max comments per request", min_value=10, max_value=500, value=100, step=10)
 
 if video_url:
     video_id = extract_video_id(video_url)
@@ -97,3 +97,4 @@ Question:
             st.warning("No comments found for this video.")
     else:
         st.error("Invalid YouTube URL.")
+
