@@ -49,7 +49,7 @@ st.set_page_config(page_title="YouTube Comments Analyzer", page_icon="🎬", lay
 
 st.markdown("""
 <style>
-    .big-font {font-size:24px !important; font-weight:bold; color:#FF4B4B;}
+    .big-font {font-size:24px !important; font-weight:bold; color:#674ea7;}
     footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
@@ -108,6 +108,14 @@ Question:
             st.warning("No comments found for this video.")
     else:
         st.error("Invalid YouTube URL.")
+
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+st.subheader("☁️ Most Common Words in Comments")
+text = " ".join(df["comment"].dropna())
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+st.image(wordcloud.to_array())
 
 
 
